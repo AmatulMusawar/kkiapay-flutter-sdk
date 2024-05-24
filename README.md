@@ -76,6 +76,7 @@ KkiapayFlutterSdkWeb.pay(kkiapay, (response){});
 ```dart
 import 'package:flutter/material.dart';
 import 'package:kkiapay_flutter_sdk/kkiapay.dart';
+import 'package:kkiapay_flutter_sdk/kkiapay_flutter_sdk_web.dart';
 import './successScreen.dart';
 
 void main() => runApp(App());
