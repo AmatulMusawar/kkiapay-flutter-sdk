@@ -33,7 +33,7 @@ add to your index.html
 ## Usage
 
 ```dart
-    import 'package:kkiapay_flutter_sdk/kkiapay_flutter_sdk.dart';
+import 'package:kkiapay_flutter_sdk/kkiapay.dart';
 ```
 
 #### Initialise the Kkiapay Instance
@@ -65,17 +65,17 @@ Mobile:
 Navigator.push(context, MaterialPageRoute(builder: (context) => kkiapay),
 ```
 
-Web:
+Web: 
 
 ```dart
-kkiapayWeb.pay(kkiapay, (response){}),
+KkiapayFlutterSdkWeb.pay(kkiapay, (response){});
 ```
 
 ## Example
 
 ```dart
 import 'package:flutter/material.dart';
-import 'package:kkiapay_flutter_sdk/kkiapay_flutter_sdk.dart';
+import 'package:kkiapay_flutter_sdk/kkiapay.dart';
 import './successScreen.dart';
 
 void main() => runApp(App());
@@ -90,7 +90,7 @@ void callback(response, context) {
 
     case PAYMENT_INIT:
       debugPrint(PAYMENT_INIT);
-      break;
+      break;  
 
     case PENDING_PAYMENT:
       debugPrint(PENDING_PAYMENT);
@@ -138,7 +138,7 @@ class App extends StatelessWidget {
       debugShowCheckedModeBanner: false,
       home: Scaffold(
         appBar: AppBar(
-          backgroundColor: nColorPrimary,
+          backgroundColor: primaryColor,
           title: Text('Kkiapay Sample'),
           centerTitle: true,
         ),
@@ -195,7 +195,7 @@ class KkiapaySample extends StatelessWidget {
                   style: TextStyle(color: Colors.white),
                 ),
                 onPressed: () {
-                  kkiapayWeb.pay(kkiapay, (response){});
+                  KkiapayFlutterSdkWeb.pay(kkiapay, (response){});
                 },
               ),
             )
